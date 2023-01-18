@@ -16,4 +16,5 @@
         ref表示参照哪一个bean-->
         <property name="bookDao" ref="bookDao"/>
     </bean>
+
 </beans>

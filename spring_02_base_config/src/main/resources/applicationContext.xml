@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--bean中可以使用name给当前bean请别名，多个别名使用逗号、分号、空格隔开-->
+    <bean id="bookDao" name="dao,dao2" class="top.weiyuexin.dao.impl.BookDaoImpl"></bean>
+    <!--
+    scope定义baen的作用范围
+    1、singleton(默认)：单例模式，每次创建的对象一样
+    2、prototype:非单例，每次创建的对象不一样
+    -->
+    <bean id="bookService" name="service bookEbi" scope="prototype" class="top.weiyuexin.service.impl.BookServiceImpl">
+        <property name="bookDao" ref="bookDao"/>
+    </bean>
+</beans>

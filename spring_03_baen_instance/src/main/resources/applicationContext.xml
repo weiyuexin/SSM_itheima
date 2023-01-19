@@ -3,5 +3,28 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="bookDao" class="top.weiyuexin.dao.impl.BookDaoImpl"></bean>
+    <!--实例化bean的方法-->
+    <!--方式一：构造方法实例化bean（常用）-->
+    <!--<bean id="bookDao" class="top.weiyuexin.dao.impl.BookDaoImpl"></bean>-->
+
+    <!--方式二：使用静态工厂实例化bean-->
+    <!--
+    class 属性写工厂类
+    factory-method属性写对应的工厂中的构造方法
+    -->
+    <!--<bean id="orderDao" class="top.weiyuexin.factory.OrderDaoFactory" factory-method="getOrderDao" />-->
+
+    <!--方式三：使用实例工厂实例化bean-->
+    <!--
+    1、先配置工厂bean
+    2、使用实例工厂实例化bean
+        factory-bean表示对应的实例工厂
+        factory-method表示实例工厂中的构造bean实例的方法
+    -->
+    <!--<bean id="userFactory" class="top.weiyuexin.factory.UserDaoFactory"/>
+    <bean id="userDao" factory-bean="userFactory" factory-method="getUserDao"/>-->
+
+    <!--方式四：使用FactoryBean实例化bean  (务必掌握，后面整合框架常用)-->
+    <!--造出的对象不是UserDaoFactoryBean对象，而是UserDaoFactoryBean中getObject方法造出的对象-->
+    <bean id="userDao" class="top.weiyuexin.factory.UserDaoFactoryBean"/>
 </beans>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--
+    init-method  初始化方法
+    destroy-method  销毁方法
+    -->
+    <bean id="bookDao" class="top.weiyuexin.dao.impl.BookDaoImpl" init-method="init" destroy-method="destory" />
+
+    <bean id="bookService" class="top.weiyuexin.service.impl.BookServiceImpl">
+        <property name="bookDao" ref="bookDao"/>
+    </bean>
+
+
+    <!--
+    bean的生命周期
+    一、初始化容器
+        1、创建对象（内存分配）
+        2、执行构造方法
+        3、执行属性注入（set操作）
+        4、执行bean初始化方法
+    二、使用bean
+        1、执行业务操作
+    三、关闭/销毁容器
+        1、执行bean销毁方法
+
+    -->
+</beans>

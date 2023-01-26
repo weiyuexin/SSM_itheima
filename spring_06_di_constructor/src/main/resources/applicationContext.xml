@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--标准书写  耦合度太高
+    <bean id="bookDao" class="weiyuexin.dao.impl.BookDaoImpl">
+        &lt;!&ndash;构造器注入基本数据类型&ndash;&gt;
+        <constructor-arg name="connectionNum" value="10"/>
+        <constructor-arg name="databaseName" value="mysql"/>
+
+    </bean>
+    <bean id="userDao" class="weiyuexin.dao.impl.UserDaoImpl"/>
+
+    <bean id="bookService" class="weiyuexin.service.impl.BookServiceImpl">
+        &lt;!&ndash;构造器注入
+        name是构造方法中形参的名称
+        ref是上面写的id
+        &ndash;&gt;
+        <constructor-arg name="bookDao1"  ref="bookDao"/>
+        <constructor-arg name="userDao" ref="userDao"/>
+    </bean>-->
+
+
+
+   <!-- 解决形参名称的问题，与形参名称不耦合
+   <bean id="bookDao" class="weiyuexin.dao.impl.BookDaoImpl">
+        <constructor-arg type="int" value="10"/>
+        <constructor-arg type="java.lang.String" value="mysql"/>
+
+    </bean>
+    <bean id="userDao" class="weiyuexin.dao.impl.UserDaoImpl"/>
+
+    <bean id="bookService" class="weiyuexin.service.impl.BookServiceImpl">
+        <constructor-arg name="bookDao1"  ref="bookDao"/>
+        <constructor-arg name="userDao" ref="userDao"/>
+    </bean>-->
+
+
+
+    <!--解决参数类型重复问题，使用位置解决参数匹配
+    <bean id="bookDao" class="weiyuexin.dao.impl.BookDaoImpl">
+        <constructor-arg index="0" value="10"/>
+        <constructor-arg index="1" value="mysql"/>
+
+    </bean>
+    <bean id="userDao" class="weiyuexin.dao.impl.UserDaoImpl"/>
+
+    <bean id="bookService" class="weiyuexin.service.impl.BookServiceImpl">
+        <constructor-arg name="bookDao1"  ref="bookDao"/>
+        <constructor-arg name="userDao" ref="userDao"/>
+    </bean>-->
+
+</beans>

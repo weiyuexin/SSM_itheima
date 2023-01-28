@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean name="bookDao" class="top.weiyuexin.dao.impl.BookDaoImpl">
+        <property name="array">
+            <array>
+                <value>10</value>
+                <value>20</value>
+                <value>30</value>
+                <value>40</value>
+            </array>
+        </property>
+        <property name="list">
+            <list>
+                <value>itheima</value>
+                <value>weiyuexin</value>
+                <value>learn</value>
+                <value>java</value>
+            </list>
+        </property>
+        <property name="set">
+            <set>
+                <value>wyx</value>
+                <value>wyx1</value>
+                <value>wyx2</value>
+                <value>wyx</value>
+            </set>
+        </property>
+        <property name="map">
+            <map>
+                <entry key="country" value="china"/>
+                <entry key="province" value="henan"/>
+                <entry key="city" value="kaifeng"/>
+            </map>
+        </property>
+        <property name="properties">
+            <props>
+                <prop key="country">china</prop>
+                <prop key="province">henan</prop>
+                <prop key="city">kaifeng</prop>
+            </props>
+        </property>
+    </bean>
+</beans>

@@ -15,7 +15,7 @@ import top.weiyuexin.dao.BookDao;
 //@Component配置bean
 
 /**
- * @Component的衍生注解：
+ * @Component（通用注解）的衍生注解：
  * @Controller：用于定义表现层bean
  * @Service：用于定义业务层bean
  * @Repository：用于定义数据层bean

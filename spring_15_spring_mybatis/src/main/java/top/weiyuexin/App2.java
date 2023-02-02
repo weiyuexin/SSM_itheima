@@ -6,6 +6,8 @@ import top.weiyuexin.config.SpringConfig;
 import top.weiyuexin.domain.Account;
 import top.weiyuexin.service.AccountService;
 
+import java.util.List;
+
 /**
  * @PackageName: top.weiyuexin
  * @ProjectName: SSM_itheima
@@ -21,5 +23,7 @@ public class App2 {
 
         Account account = accountService.findById(1);
         System.out.println(account);
+        List<Account> list = accountService.findAll();
+        System.out.println(list);
     }
 }

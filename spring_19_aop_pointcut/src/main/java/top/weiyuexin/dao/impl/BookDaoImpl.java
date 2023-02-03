@@ -1,6 +1,5 @@
 package top.weiyuexin.dao.impl;
 
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 import top.weiyuexin.dao.BookDao;
 
@@ -17,7 +16,7 @@ public class BookDaoImpl implements BookDao {
     @Override
     public void save() {
         //输出当前系统时间
-       // System.out.println(System.currentTimeMillis());
+        System.out.println(System.currentTimeMillis());
         System.out.println("book dao save...");
     }
 

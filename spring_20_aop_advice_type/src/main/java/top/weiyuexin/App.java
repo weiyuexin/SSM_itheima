@@ -20,5 +20,7 @@ public class App {
         int select = bookDao.select();
         System.out.println(select);
 
+        // AOP:无侵入拓展功能
+
     }
 }

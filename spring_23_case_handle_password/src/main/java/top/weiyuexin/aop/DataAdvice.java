@@ -18,7 +18,7 @@ import org.springframework.stereotype.Component;
 @Component
 @Aspect
 public class DataAdvice {
-    @Pointcut("execution(boolean top.weiyuexin.service.*Service.*(*,*))")
+    @Pointcut("execution(boolean top.weiyuexin.service.*Service.*(..))")
     private void servicePt(){}
 
     @Around("servicePt()")

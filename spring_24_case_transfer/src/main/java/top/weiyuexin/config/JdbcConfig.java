@@ -39,7 +39,7 @@ public class JdbcConfig {
     @Bean //设置事务管理器
     public PlatformTransactionManager platformTransactionManager(DataSource dataSource){
         DataSourceTransactionManager transactionManager = new DataSourceTransactionManager();
-        transactionManager.setDataSource(dataSource);
+        transactionManager.setDataSource(dataSource); //将datasourse注入事务管理器中
         return transactionManager;
     }
 }

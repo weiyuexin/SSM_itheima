@@ -20,7 +20,7 @@ public class MybatisConfig {
     public SqlSessionFactoryBean sqlSessionFactory(DataSource dataSource){
         SqlSessionFactoryBean ssfb = new SqlSessionFactoryBean();
         ssfb.setTypeAliasesPackage("top.weiyuexin.domain");
-        ssfb.setDataSource(dataSource);
+        ssfb.setDataSource(dataSource); //将DataSourse注入SqlSessionFactory
         return ssfb;
     }
     @Bean
